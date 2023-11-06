@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "793737123078",
+    "project_id": "codefirst-c5bcf",
+    "storage_bucket": "codefirst-c5bcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793737123078:android:e420514eee2fc31a943a87",
+        "android_client_info": {
+          "package_name": "com.example.codefirst"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSX-rXoK9XB12BeOlgJifbjhLvgwtwYfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
