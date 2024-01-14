@@ -19,8 +19,8 @@ class _BtmAbtState extends State<BtmAbt> {
             padding: EdgeInsets.symmetric(vertical: 55.h, horizontal: 25.h),
             child: Column(
               children: [
-                Image.network(
-                  'https://logoeps.com/wp-content/uploads/2014/05/1176-info-logo-in-a-circle-icon-vector-icon-vector-eps.png',
+                Image.asset(
+                  'assets/info.png',
                   width: 150,
                   height: 150,
                 ),
@@ -41,21 +41,47 @@ class _BtmAbtState extends State<BtmAbt> {
                 Text(
                   'Thanks For Using For Our App',
                   style: TextStyle(
-                    fontSize: 22.sp,
+                    fontSize: 20.sp,
                     color: Colors.blue.shade800,
                     fontWeight: FontWeight.w800,
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: 15.h,
                 ),
                 Text(
-                  'from CSE*(AIML) - II',
+                  'Shyam Sundhar G\nCSE (AIML)',
                   style: TextStyle(
                     fontSize: 22.sp,
                     color: Colors.blue.shade800,
                     fontWeight: FontWeight.w900,
                   ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 15.h,
+                ),
+                Text(
+                  'Prof. Pandiyarajan G\nAssistant Professor (Sl .G.)',
+                  style: TextStyle(
+                    fontSize: 22.sp,
+                    color: Colors.blue.shade800,
+                    fontWeight: FontWeight.w900,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 15.h,
+                ),
+                Text(
+                  'CSE(AIML)',
+                  style: TextStyle(
+                    fontSize: 22.sp,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w900,
+                  ),
+                  textAlign: TextAlign.center,
                 )
               ],
             ),

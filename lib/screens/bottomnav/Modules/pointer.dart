@@ -1,153 +1,17 @@
-// ignore_for_file: unnecessary_null_comparison
-
-/*import 'package:codefirst/screens/programscreen/progscreen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:page_transition/page_transition.dart';
-
-class BtmBasic extends StatefulWidget {
-  const BtmBasic({super.key});
-
-  @override
-  State<BtmBasic> createState() => _BtmBasicState();
-}
-
-class _BtmBasicState extends State<BtmBasic> {
-  @override
-  Widget build(BuildContext context) {
-    ScreenUtil.init(context);
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 25),
-                child: Center(
-                  child: Text(
-                    'Intermediate Codes',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25.sp,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15.h,
-              ),
-              Container(
-                height: 450.h,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ProgramName(
-                      name: 'For Loop',
-                      size: 25,
-                    ),
-                    ProgramName(
-                      name: 'While Loop',
-                      size: 25,
-                    ),
-                    ProgramName(
-                      name: 'Do-While Loop',
-                      size: 25,
-                    ),
-                    ProgramName(
-                      name: 'Find Factorial',
-                      size: 22,
-                    ),
-                    ProgramName(
-                      name: 'Fibbonacci Series',
-                      size: 25,
-                    ),
-                    ProgramName(
-                      name: 'Palindrome',
-                      size: 25,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ProgramName extends StatefulWidget {
-  ProgramName({super.key, required this.name, this.program, this.size});
-  final name, program;
-  double? size;
-  @override
-  State<ProgramName> createState() => _ProgramNameState();
-}
-
-class _ProgramNameState extends State<ProgramName> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
-      child: Container(
-        height: 65.h,
-        width: MediaQuery.of(context).size.width.w,
-        decoration: BoxDecoration(
-            color: Colors.blue.shade800,
-            borderRadius: BorderRadius.circular(20.0)),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '${widget.name}',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: widget.size,
-                    fontWeight: FontWeight.bold),
-              ),
-              IconButton(
-                  splashColor: Colors.white,
-                  hoverColor: Colors.white,
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.of(context).pushAndRemoveUntil(
-                        PageTransition(
-                            child: ProgScreen(
-                              progname: widget.name,
-                            ),
-                            type: PageTransitionType.leftToRight,
-                            duration: Duration(microseconds: 300)),
-                        (route) => true);
-                  },
-                  icon: Icon(
-                    Icons.arrow_forward_ios,
-                    size: 35,
-                    color: Colors.white,
-                  ))
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}*/
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:codefirst/screens/programscreen/progscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 
-class BtmBasic extends StatefulWidget {
-  const BtmBasic({Key? key});
+class BtmPointer extends StatefulWidget {
+  const BtmPointer({Key? key});
 
   @override
-  State<BtmBasic> createState() => _BtmBasicState();
+  State<BtmPointer> createState() => _BtmPointerState();
 }
 
-class _BtmBasicState extends State<BtmBasic> {
+class _BtmPointerState extends State<BtmPointer> {
   late TextEditingController _searchController;
   late List<DocumentSnapshot> _documents;
   late List<DocumentSnapshot> _filteredDocuments;
@@ -162,7 +26,7 @@ class _BtmBasicState extends State<BtmBasic> {
 
   void _loadDocuments() async {
     QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection('Basic').get();
+        await FirebaseFirestore.instance.collection('Pointers').get();
     List<DocumentSnapshot> documents = querySnapshot.docs;
 
     documents.sort((a, b) => a['title']
@@ -207,7 +71,7 @@ class _BtmBasicState extends State<BtmBasic> {
                 padding: EdgeInsets.only(top: 25),
                 child: Center(
                   child: Text(
-                    'Basic Codes',
+                    'Pointers Codes',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -237,7 +101,11 @@ class _BtmBasicState extends State<BtmBasic> {
                         ),
                       ),
                     )
-                  : CircularProgressIndicator(),
+                  : Text(
+                      'No Data',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+                    ),
               _documents.isNotEmpty
                   ? SingleChildScrollView(
                       child: Padding(

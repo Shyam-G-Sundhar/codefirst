@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 
-class BtmBasic extends StatefulWidget {
-  const BtmBasic({super.key});
+class BtmLab extends StatefulWidget {
+  const BtmLab({super.key});
 
   @override
-  State<BtmBasic> createState() => _BtmBasicState();
+  State<BtmLab> createState() => _BtmLabState();
 }
 
-class _BtmBasicState extends State<BtmBasic> {
+class _BtmLabState extends State<BtmLab> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -140,14 +140,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 
-class BtmBasic extends StatefulWidget {
-  const BtmBasic({Key? key});
+class BtmLab extends StatefulWidget {
+  const BtmLab({Key? key});
 
   @override
-  State<BtmBasic> createState() => _BtmBasicState();
+  State<BtmLab> createState() => _BtmLabState();
 }
 
-class _BtmBasicState extends State<BtmBasic> {
+class _BtmLabState extends State<BtmLab> {
   late TextEditingController _searchController;
   late List<DocumentSnapshot> _documents;
   late List<DocumentSnapshot> _filteredDocuments;
@@ -162,7 +162,7 @@ class _BtmBasicState extends State<BtmBasic> {
 
   void _loadDocuments() async {
     QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection('Basic').get();
+        await FirebaseFirestore.instance.collection('Interview').get();
     List<DocumentSnapshot> documents = querySnapshot.docs;
 
     documents.sort((a, b) => a['title']
@@ -207,7 +207,7 @@ class _BtmBasicState extends State<BtmBasic> {
                 padding: EdgeInsets.only(top: 25),
                 child: Center(
                   child: Text(
-                    'Basic Codes',
+                    'Interview Questions',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -237,7 +237,11 @@ class _BtmBasicState extends State<BtmBasic> {
                         ),
                       ),
                     )
-                  : CircularProgressIndicator(),
+                  : Text(
+                      'No Data',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w800, fontSize: 18),
+                    ),
               _documents.isNotEmpty
                   ? SingleChildScrollView(
                       child: Padding(

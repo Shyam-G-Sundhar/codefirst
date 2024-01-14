@@ -19,10 +19,10 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             backgroundColor: Colors.blue.shade800,
             elevation: 10,
-            toolbarHeight: 200.h,
+            toolbarHeight: 180.h,
             centerTitle: true,
             title: Text(
-              'C Program Editor',
+              'CodePlay Connect',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 25,
@@ -35,10 +35,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.network(
-                      'https://ouch-cdn2.icons8.com/Lhq5dBICYdkNoSP3WpZRnUAHYVYxyt8GQ-vnM6bmjS4/rs:fit:368:237/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTM5/L2EwYjFiZjkyLTFm/MDgtNDNmYi1hZmI4/LTQzZjFlMjFlYWMw/Mi5wbmc.png',
-                      width: 300,
-                      height: 300),
+                  Image.asset('assets/home.png', width: 300, height: 300),
                   SizedBox(
                     height: 25.h,
                   ),
@@ -57,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 20),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue.shade800,
@@ -69,10 +66,10 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.0.h),
                     child: Text(
-                      "Errors are the stepping stones to expertise;don't fear them, but learn from them",
+                      "Errors are the stepping stones to expertise don't fear them, but learn from them",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 15.2.sp,
+                        fontSize: 14.2.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

@@ -5,9 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProgScreen extends StatefulWidget {
-  ProgScreen({Key? key, required this.progname}) : super(key: key);
+  ProgScreen({Key? key, required this.progname, this.code, this.output})
+      : super(key: key);
 
-  final progname;
+  final progname, code, output;
 
   @override
   State<ProgScreen> createState() => _ProgScreenState();
@@ -20,33 +21,7 @@ class _ProgScreenState extends State<ProgScreen> {
   @override
   Widget build(BuildContext context) {
     final source = """
-#include <stdio.h>
-
-int main() {
-  int a[10], n, s, i;
-
-  printf("Enter number of elements in array : ");
-  scanf("%d", &n);
-
-  printf("Enter the values : \\n");
-  for (i = 1; i <= n; i++) {
-    scanf("%d", &a[i]);
-  }
-
-  printf("Enter a number to search : ");
-  scanf("%d", &s);
-
-  for (i = 1; i <= n; i++) {
-    if (a[i] == s) {
-      printf("Element %d is present at location %d.\\n", s, i);
-      break;
-    }
-  }
-
-  if (i == n) printf("Element %d is not present in the array.\\n", s);
-
-  return 0;
-}
+${widget.code}
 """;
 
     return SafeArea(
@@ -66,6 +41,7 @@ int main() {
         ),
         body: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: 15.h,
@@ -178,11 +154,15 @@ int main() {
                 height: 5,
               ),
               if (isShow == true)
-                Text(
-                  'Welcome to C Programming',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 15.0, vertical: 15.0),
+                  child: Text(
+                    '${widget.output}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 )
             ],
